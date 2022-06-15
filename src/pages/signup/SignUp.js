@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../style/common.css';
@@ -9,7 +10,6 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import {Eye, EyeSlash, Check,Dot,X } from 'react-bootstrap-icons';
 import Feedback from 'react-bootstrap/Feedback';
 import Button from 'react-bootstrap/Button';
-
 function SignUp() {
     const [isShowPassword, setIsShowPassword] = useState(false);
     const [email, setEmail] = useState("");
@@ -130,7 +130,6 @@ function SignUp() {
         document.getElementById("msqPwd").style.display = '';
     }
     function checkSpecialCharExist(str){
-        //eslint-disable-next-line
         let  format = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
         return format.test(str);
     }
