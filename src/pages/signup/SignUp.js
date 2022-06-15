@@ -31,7 +31,7 @@ function SignUp() {
         "Special character (!@# etc)"
     ];
 
-    const [validPwd, setValidPwd] = useState([
+    const [validPwd] = useState([
         false,false,false,false
     ]);
 
@@ -44,12 +44,12 @@ function SignUp() {
     function handleChange(e) {
         let fieldName = e.target.name;
         var isValidateCurrent = isValidate;
+        var error = errors;
         switch (fieldName) {
             case 'email':
                 let emailInput = e.target.value;
                 setEmail(emailInput);
-                var error = errors;
-                if(emailInput == ""){
+                if(emailInput === ""){
                     error.email = "Email is required.";
                     setErrors(error);
                 }
@@ -60,7 +60,7 @@ function SignUp() {
                     error.email = "";
                     setErrors(error);
                 }
-                isValidateCurrent.email = (error.email == "");
+                isValidateCurrent.email = (error.email === "");
                 break;
             case 'password':
                 let passwordInput = e.target.value;
@@ -89,7 +89,6 @@ function SignUp() {
                 }else{
                     validPwdCurrent[3] = false;
                 }
-                var error = errors;
                 if(!(validPwdCurrent[0]&&
                     validPwdCurrent[1]&&
                     validPwdCurrent[2]&&
@@ -102,7 +101,7 @@ function SignUp() {
                     setErrors(error);
                 }
 
-                isValidateCurrent.password = (error.pwd == "");
+                isValidateCurrent.password = (error.pwd === "");
                 break;
             case 'agree-term':
                 setAgreeTerm(e.target.checked);
@@ -112,8 +111,6 @@ function SignUp() {
                 break;
         }
         setIsValidate(isValidateCurrent);
-        console.log(isValidate);
-
     }
 
     function validateEmail(email) {
@@ -194,14 +191,14 @@ function SignUp() {
                             <Feedback id="msqPwd" style={{"display":"none"}} type="invalid">
                                 Missing password requirements:
                                 {validPwd.map((item,index)=>{
-                                    if(item == false){
+                                    if(item === false){
                                         return (<div><X size={15}></X>{validMessPwd[index]}</div>);
                                     }
                                 })}
                             </Feedback>
                             <div id="messPWD" style={{"display":"none"}}>
                                 {validPwd.map((item,index)=>{
-                                    if(item == true){
+                                    if(item === true){
                                         return (<div className="mss-pwd-valid"><Check size={30}></Check>{validMessPwd[index]}</div>);
                                     } else {
                                         return (<div className="mss-pwd-invalid"><Dot size={30}></Dot>{validMessPwd[index]}</div>);
