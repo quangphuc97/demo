@@ -13,6 +13,8 @@ import Button from 'react-bootstrap/Button';
 function SignUp() {
     const [isShowPassword, setIsShowPassword] = useState(false);
     const [email, setEmail] = useState("");
+    const [agreeTerm, setAgreeTerm] = useState("");
+
     const [isValidate, setIsValidate] = useState({
         email:false,
         password:false,
@@ -41,6 +43,7 @@ function SignUp() {
 
     function handleChange(e) {
         let fieldName = e.target.name;
+        var isValidateCurrent = isValidate;
         switch (fieldName) {
             case 'email':
                 let emailInput = e.target.value;
@@ -57,9 +60,7 @@ function SignUp() {
                     error.email = "";
                     setErrors(error);
                 }
-                var isValidateCurrent = isValidate;
                 isValidateCurrent.email = (error.email == "");
-                setIsValidate(isValidateCurrent);
                 break;
             case 'password':
                 let passwordInput = e.target.value;
@@ -101,18 +102,16 @@ function SignUp() {
                     setErrors(error);
                 }
 
-                var isValidateCurrent = isValidate;
                 isValidateCurrent.password = (error.pwd == "");
-                setIsValidate(isValidateCurrent);
                 break;
             case 'agree-term':
-                var isValidateCurrent = isValidate;
+                setAgreeTerm(e.target.checked);
                 isValidateCurrent.agreeTerm = e.target.checked;
-                setIsValidate(isValidateCurrent);
                 break;
             default:
                 break;
         }
+        setIsValidate(isValidateCurrent);
         console.log(isValidate);
 
     }
@@ -228,7 +227,6 @@ function SignUp() {
                     </div>
                     <Button className="submit" variant="secondary" size="sm"
                             disabled={!isValidate.email || !isValidate.password || !isValidate.agreeTerm? true:""}
-
                     >
                         Get started
                     </Button>
