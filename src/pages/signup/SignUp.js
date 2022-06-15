@@ -130,6 +130,7 @@ function SignUp() {
         document.getElementById("msqPwd").style.display = '';
     }
     function checkSpecialCharExist(str){
+        //eslint-disable-next-line
         let  format = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
         return format.test(str);
     }
@@ -216,7 +217,7 @@ function SignUp() {
                             </Col>
                             <Col sm={11} style={{"fontWeight": "bold"}}>
                                 <div>I have read &amp; agreed to Laybuy's <a className="link-term"
-                                                                             href="#" target="_blank">privacy policy</a>
+                                                                             href="/#" target="_blank">privacy policy</a>
                                 </div>
                                 <div>and understand how this is applied.</div>
                             </Col>
@@ -241,7 +242,7 @@ function SignUp() {
                "color": "rgb(120, 109, 255)",
                 "fontSize": "12px",
                "textDecoration": "none"
-            }} href="#">Need help?</a>
+            }} href="/#">Need help?</a>
         </div>
         <FooterSignUp/>
     </div>)
