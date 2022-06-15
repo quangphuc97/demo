@@ -1,0 +1,102 @@
+.sign-up-form{
+    text-align: center;
+    padding: 5%;
+    width: 40%;
+    margin-left: 30%;
+    box-shadow: rgb(57 57 71 / 15%) 0px 20px 40px;
+    z-index: 6;
+    border-radius: 12px;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+}
+.sign-up-form .submit{ background-color: #867CFF;
+    border-color: #867CFF;
+    margin: 2%;
+    height: 50px;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    width: 100%;
+}
+.sign-up-form .title{
+    padding-bottom: 5%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.sign-up-form .term{
+    text-align: left;
+    margin: 5% 0;
+    background-color: #F0F0F8;
+    border-radius: 12px;
+}
+.sign-up-form .link-term{
+    color: rgb(120, 109, 255);
+    text-decoration: none;
+}
+.sign-up-form .check-term{
+    font-size: 1.5rem;
+    margin: 50%;
+}
+
+.sign-up-form .form-check-input:checked {
+    background-color: rgb(120, 109, 255);
+    border-color: rgb(120, 109, 255);
+}
+.sign-up-form  .input-custom{
+    position: relative;
+    border-radius: 12px;
+    cursor: text;
+}
+.sign-up-form .invalid-feedback
+{
+    border-radius: 12px;
+    cursor: text;
+    background-color: rgb(235, 83, 84);
+    position: relative;
+    padding: 1rem;
+    color: rgb(247, 249, 252);
+    font-size: 14px;
+    text-align: left;
+}
+.sign-up-form .form-control:focus{
+    box-shadow: rgb(120 109 255 / 40%) 0px 0px 0px 4px;
+}
+.sign-up-form .invalid{
+    position: relative;
+    border-radius: 25px;
+    cursor: text;
+    background-color: rgb(235, 83, 84);
+}
+.sign-up-form .invalid-input{
+    box-shadow: #F7BABB 0px 0px 0px 4px !important;
+
+}
+.sign-up-form .eye-button{
+cursor: pointer;
+position: inherit;
+float: right;
+margin-top: -30px;
+}
+
+.sign-up-form .mss-pwd-valid{
+    color:#05BE96;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.sign-up-form .mss-pwd-invalid{
+    color: #fa6666;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.sign-up-form #messPWD{
+    margin-top: 3%;
+    text-align: left;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    z-index: 9999;
+    border-style: solid;
+    border-color: rgb(212, 212, 220);
+    border-width: 1px;
+    border-radius: 20px;
+}
